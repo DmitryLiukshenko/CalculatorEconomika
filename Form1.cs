@@ -17,10 +17,12 @@ namespace CalculatorEconomika
         public Form1()
         {
             InitializeComponent();
-            txt_SumCredit.MaxLength = 8;
+            MoneyTB.MaxLength = 8;
             txt_Year.MaxLength = 2;
-            txt_Percent.MaxLength = 2;
+            YearPerTB.MaxLength = 2;
+
         }
+        bool Round;
 
         private void txt_Year_TextChanged(object sender, EventArgs e)
         {
@@ -74,27 +76,46 @@ namespace CalculatorEconomika
         }
         void PLT()
         {
-            double Percent = Convert.ToDouble(txt_Percent.Text);
-            double PM = Percent / 12 / 100;
-            double KA = (PM * Math.Pow(1 + PM, Convert.ToDouble(txt_Year.Text))) / (Math.Pow(1 + PM, Convert.ToDouble(txt_Year.Text)) - 1);
-            double PLT = Math.Round(KA * Convert.ToInt32(txt_SumCredit.Text), 2);
-            label10.Text = PLT.ToString();
-            label11.Text = Convert.ToString(PLT * Convert.ToDouble(label9.Text));
-            label12.Text = Convert.ToString(Convert.ToDouble(label11.Text) - Convert.ToInt32(txt_SumCredit.Text));
+            //double Percent = Convert.ToDouble(txt_Percent.Text);
+            //double PM = Percent / 12 / 100;
+            //double KA = (PM * Math.Pow(1 + PM, Convert.ToDouble(txt_Year.Text))) / (Math.Pow(1 + PM, Convert.ToDouble(txt_Year.Text)) - 1);
+            //double PLT = Math.Round(KA * Convert.ToInt32(txt_SumCredit.Text), 2);
+            //label10.Text = PLT.ToString();
+            //label11.Text = Convert.ToString(PLT * Convert.ToDouble(label9.Text));
+            //label12.Text = Convert.ToString(Convert.ToDouble(label11.Text) - Convert.ToInt32(txt_SumCredit.Text));
+            double Money = Convert.ToDouble(MoneyTB.Text);
+            int M = Convert.ToInt32(MonthTB.Text);
+            double PM = Convert.ToDouble(YearPerTB.Text) / 12 / 100;
+            
+            double KA = (PM * (Math.Pow((1 + PM), M))) / ((Math.Pow((1 + PM), M)) - 1);
+            KATB.Text = Convert.ToString(Rounding(KA));
+            double PLT = KA * Money;
+            PlatiTB.Text = Convert.ToString(Rounding(PLT));
         }
-        void EX2()
+        public double Rounding(double obj)
+        {
+            if (Round)
+            {
+                return Math.Round(obj);
+            }
+            else
+            {
+                return obj;
+            }
+
+            void EX2()
         {
             int Month = Convert.ToInt32(label9.Text);
             double[,] ex2TB = new double[Month,4];
-            double Percent = Convert.ToDouble(txt_Percent.Text);
+            double Percent = Convert.ToDouble(YearPerTB.Text);
             double PM = Percent / 12 / 100;
             double PLT = Convert.ToDouble(label10.Text);
             try
             {
-                this.DB_Payment.ClearSelection();
+                this.DB_Payment.Rows.Clear();
                 for (int i = 0; i < Month; i++)
                 {
-                    ex2TB[i, 0] = (PLT - Convert.ToInt32(txt_SumCredit.Text) * PM) * Math.Pow(1 + PM, i - 1);
+                    ex2TB[i, 0] = (PLT - Convert.ToInt32(MoneyTB.Text) * PM) * Math.Pow(1 + PM, i - 1);
                     Trace.WriteLine(ex2TB[i, 0]);
                     this.DB_Payment.Rows.Add(ex2TB[i, 0]);
                     

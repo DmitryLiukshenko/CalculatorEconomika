@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_SumCredit = new System.Windows.Forms.TextBox();
-            this.txt_Percent = new System.Windows.Forms.TextBox();
+            this.MoneyTB = new System.Windows.Forms.TextBox();
+            this.YearPerTB = new System.Windows.Forms.TextBox();
             this.txt_Year = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,20 +52,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.DB_Payment)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_SumCredit
+            // MoneyTB
             // 
-            this.txt_SumCredit.Location = new System.Drawing.Point(302, 90);
-            this.txt_SumCredit.Name = "txt_SumCredit";
-            this.txt_SumCredit.Size = new System.Drawing.Size(78, 20);
-            this.txt_SumCredit.TabIndex = 0;
-            this.txt_SumCredit.TextChanged += new System.EventHandler(this.txt_SumCredit_TextChanged);
+            this.MoneyTB.Location = new System.Drawing.Point(302, 90);
+            this.MoneyTB.Name = "MoneyTB";
+            this.MoneyTB.Size = new System.Drawing.Size(78, 20);
+            this.MoneyTB.TabIndex = 0;
+            this.MoneyTB.TextChanged += new System.EventHandler(this.txt_SumCredit_TextChanged);
             // 
-            // txt_Percent
+            // YearPerTB
             // 
-            this.txt_Percent.Location = new System.Drawing.Point(302, 131);
-            this.txt_Percent.Name = "txt_Percent";
-            this.txt_Percent.Size = new System.Drawing.Size(30, 20);
-            this.txt_Percent.TabIndex = 1;
+            this.YearPerTB.Location = new System.Drawing.Point(302, 131);
+            this.YearPerTB.Name = "YearPerTB";
+            this.YearPerTB.Size = new System.Drawing.Size(30, 20);
+            this.YearPerTB.TabIndex = 1;
             // 
             // txt_Year
             // 
@@ -275,8 +275,8 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Year);
-            this.Controls.Add(this.txt_Percent);
-            this.Controls.Add(this.txt_SumCredit);
+            this.Controls.Add(this.YearPerTB);
+            this.Controls.Add(this.MoneyTB);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -289,8 +289,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_SumCredit;
-        private System.Windows.Forms.TextBox txt_Percent;
+        private System.Windows.Forms.TextBox MoneyTB;
+        private System.Windows.Forms.TextBox YearPerTB;
         private System.Windows.Forms.TextBox txt_Year;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
