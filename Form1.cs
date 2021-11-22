@@ -50,7 +50,8 @@ namespace CalculatorEconomika
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Equals();
+            PLT();
+            EX2();
         }
 
         private void txt_SumCredit_TextChanged(object sender, EventArgs e)
@@ -68,18 +69,48 @@ namespace CalculatorEconomika
             }
             else
             {
-                Equals();
+                PLT();
             }
         }
-        void Equals()
+        void PLT()
         {
-            double z = Convert.ToDouble(txt_Percent.Text);
-            double Y = z / 12 / 100;
-            double x = (Y * Math.Pow(1 + Y, Convert.ToDouble(txt_Year.Text))) / (Math.Pow(1 + Y, Convert.ToDouble(txt_Year.Text)) - 1);
-            double P = Math.Round(x * Convert.ToInt32(txt_SumCredit.Text), 2);
-            label10.Text = P.ToString();
-            label11.Text = Convert.ToString(P * Convert.ToDouble(label9.Text));
+            double Percent = Convert.ToDouble(txt_Percent.Text);
+            double PM = Percent / 12 / 100;
+            double KA = (PM * Math.Pow(1 + PM, Convert.ToDouble(txt_Year.Text))) / (Math.Pow(1 + PM, Convert.ToDouble(txt_Year.Text)) - 1);
+            double PLT = Math.Round(KA * Convert.ToInt32(txt_SumCredit.Text), 2);
+            label10.Text = PLT.ToString();
+            label11.Text = Convert.ToString(PLT * Convert.ToDouble(label9.Text));
             label12.Text = Convert.ToString(Convert.ToDouble(label11.Text) - Convert.ToInt32(txt_SumCredit.Text));
+        }
+        void EX2()
+        {
+            int Month = Convert.ToInt32(label9.Text);
+            double[,] ex2TB = new double[Month,4];
+            double Percent = Convert.ToDouble(txt_Percent.Text);
+            double PM = Percent / 12 / 100;
+            double PLT = Convert.ToDouble(label10.Text);
+            try
+            {
+                this.DB_Payment.ClearSelection();
+                for (int i = 0; i < Month; i++)
+                {
+                    ex2TB[i, 0] = (PLT - Convert.ToInt32(txt_SumCredit.Text) * PM) * Math.Pow(1 + PM, i - 1);
+                    Trace.WriteLine(ex2TB[i, 0]);
+                    this.DB_Payment.Rows.Add(ex2TB[i, 0]);
+                    
+                }
+                
+                //DB_Payment.Rows[i + 1].Cells[1].Value = ex2TB[i, 0];
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+            
+        }
+        private void DB_Payment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

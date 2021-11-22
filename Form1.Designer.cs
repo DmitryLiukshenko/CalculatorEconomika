@@ -45,6 +45,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btn_Equals = new System.Windows.Forms.Button();
             this.check_round = new System.Windows.Forms.CheckBox();
+            this.DB_Payment = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DB_Payment)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_SumCredit
@@ -215,11 +220,46 @@
             this.check_round.UseVisualStyleBackColor = true;
             this.check_round.CheckedChanged += new System.EventHandler(this.check_round_CheckedChanged);
             // 
+            // DB_Payment
+            // 
+            this.DB_Payment.AllowUserToAddRows = false;
+            this.DB_Payment.AllowUserToDeleteRows = false;
+            this.DB_Payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DB_Payment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.DB_Payment.Location = new System.Drawing.Point(513, 89);
+            this.DB_Payment.Name = "DB_Payment";
+            this.DB_Payment.ReadOnly = true;
+            this.DB_Payment.Size = new System.Drawing.Size(406, 359);
+            this.DB_Payment.TabIndex = 5;
+            this.DB_Payment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DB_Payment_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Выплата процентов";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Общая выплата";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Осталось выплатить";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 529);
+            this.ClientSize = new System.Drawing.Size(992, 529);
+            this.Controls.Add(this.DB_Payment);
             this.Controls.Add(this.check_round);
             this.Controls.Add(this.btn_Equals);
             this.Controls.Add(this.label12);
@@ -241,6 +281,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Кредит";
+            ((System.ComponentModel.ISupportInitialize)(this.DB_Payment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,6 +306,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_Equals;
         private System.Windows.Forms.CheckBox check_round;
+        private System.Windows.Forms.DataGridView DB_Payment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
 
