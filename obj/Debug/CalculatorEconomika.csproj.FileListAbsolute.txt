@@ -1,0 +1,11 @@
+D:\GitHub_Projects\CalculatorEconomika\bin\Debug\CalculatorEconomika.exe.config
+D:\GitHub_Projects\CalculatorEconomika\bin\Debug\CalculatorEconomika.exe
+D:\GitHub_Projects\CalculatorEconomika\bin\Debug\CalculatorEconomika.pdb
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.AssemblyReference.cache
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.SuggestedBindingRedirects.cache
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.Form1.resources
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.Properties.Resources.resources
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.GenerateResource.cache
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.CoreCompileInputs.cache
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.exe
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.pdb
