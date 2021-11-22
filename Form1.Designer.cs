@@ -43,28 +43,31 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btn_Equals = new System.Windows.Forms.Button();
+            this.check_round = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txt_SumCredit
             // 
             this.txt_SumCredit.Location = new System.Drawing.Point(302, 90);
             this.txt_SumCredit.Name = "txt_SumCredit";
-            this.txt_SumCredit.Size = new System.Drawing.Size(112, 20);
+            this.txt_SumCredit.Size = new System.Drawing.Size(78, 20);
             this.txt_SumCredit.TabIndex = 0;
+            this.txt_SumCredit.TextChanged += new System.EventHandler(this.txt_SumCredit_TextChanged);
             // 
             // txt_Percent
             // 
             this.txt_Percent.Location = new System.Drawing.Point(302, 131);
             this.txt_Percent.Name = "txt_Percent";
-            this.txt_Percent.Size = new System.Drawing.Size(36, 20);
-            this.txt_Percent.TabIndex = 0;
+            this.txt_Percent.Size = new System.Drawing.Size(30, 20);
+            this.txt_Percent.TabIndex = 1;
             // 
             // txt_Year
             // 
             this.txt_Year.Location = new System.Drawing.Point(302, 173);
             this.txt_Year.Name = "txt_Year";
-            this.txt_Year.Size = new System.Drawing.Size(36, 20);
-            this.txt_Year.TabIndex = 0;
+            this.txt_Year.Size = new System.Drawing.Size(30, 20);
+            this.txt_Year.TabIndex = 2;
             this.txt_Year.TextChanged += new System.EventHandler(this.txt_Year_TextChanged);
             this.txt_Year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Year_KeyPress);
             // 
@@ -189,11 +192,36 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "0";
             // 
+            // btn_Equals
+            // 
+            this.btn_Equals.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Equals.Location = new System.Drawing.Point(188, 448);
+            this.btn_Equals.Name = "btn_Equals";
+            this.btn_Equals.Size = new System.Drawing.Size(217, 51);
+            this.btn_Equals.TabIndex = 3;
+            this.btn_Equals.Text = "Рассчитать";
+            this.btn_Equals.UseVisualStyleBackColor = true;
+            this.btn_Equals.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // check_round
+            // 
+            this.check_round.AutoSize = true;
+            this.check_round.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.check_round.Location = new System.Drawing.Point(245, 396);
+            this.check_round.Name = "check_round";
+            this.check_round.Size = new System.Drawing.Size(101, 22);
+            this.check_round.TabIndex = 4;
+            this.check_round.Text = "Округлять";
+            this.check_round.UseVisualStyleBackColor = true;
+            this.check_round.CheckedChanged += new System.EventHandler(this.check_round_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 450);
+            this.ClientSize = new System.Drawing.Size(588, 529);
+            this.Controls.Add(this.check_round);
+            this.Controls.Add(this.btn_Equals);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label11);
@@ -235,6 +263,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_Equals;
+        private System.Windows.Forms.CheckBox check_round;
     }
 }
 

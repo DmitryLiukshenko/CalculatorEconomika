@@ -9,3 +9,4 @@ D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.Gene
 D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.CoreCompileInputs.cache
 D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.exe
 D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.pdb
+D:\GitHub_Projects\CalculatorEconomika\obj\Debug\CalculatorEconomika.csproj.ResolveComReference.cache
